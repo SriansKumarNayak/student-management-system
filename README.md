@@ -1,21 +1,25 @@
 # Student Management System
 
-This is a simple student management system built using Python and Object Oriented Programming.
+A menu-driven student management system built using Python and Object Oriented Programming.
 
 ## Features
-- Add multiple students
-- Store name and marks
-- Display all student records
-- Find top student
+- Add student (auto-generated roll number)
+- View all students
+- Search student by roll number
+- Delete student by roll number
+- Input validation and error handling
 
 ## Concepts Used
-- Classes and Objects
+- Classes and Objects (OOP)
+- Class variables
+- Loops and conditionals
+- Exception handling
 - Lists
-- Loops
-- User Input
 
 ## How to Run
 1. Run the Python file
-2. Enter number of students
-3. Enter details
-4. View results
+2. Choose options from menu
+3. Add, view, search or delete students
+
+## Example
+Roll No: 101, Name: Rahul, Marks: 90
