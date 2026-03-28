@@ -1,25 +1,43 @@
-# Student Management System
+# Student Management System 🎓
 
-A menu-driven student management system built using Python and Object Oriented Programming.
+A Python-based Student Management System built using Object-Oriented Programming (OOP). This system allows you to manage student records with features like adding, viewing, searching, and deleting students.
 
-## Features
-- Add student (auto-generated roll number)
-- View all students
-- Search student by roll number
-- Delete student by roll number
+---
+
+## 🚀 Features
+
+- Add student with auto-generated Roll Number
+- View all student records
+- Search student by Roll Number
+- Delete student by Roll Number
 - Input validation and error handling
+- Clean and user-friendly CLI interface
 
-## Concepts Used
+---
+
+## 🆕 New Feature (Update)
+
+- Data persistence using JSON file
+- Student records are saved in `students.json`
+- Data is automatically loaded when the program starts
+- No data loss after closing the program
+
+---
+
+## 🧠 Concepts Used
+
 - Classes and Objects (OOP)
 - Class variables
+- Lists
 - Loops and conditionals
 - Exception handling
-- Lists
+- File handling (JSON)
 
-## How to Run
-1. Run the Python file
-2. Choose options from menu
-3. Add, view, search or delete students
+---
 
-## Example
-Roll No: 101, Name: Rahul, Marks: 90
+## ▶️ How to Run
+
+1. Make sure Python is installed
+2. Run the Python file:
+   ```bash
+   python student_management.py
