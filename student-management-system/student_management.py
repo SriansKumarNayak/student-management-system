@@ -1,3 +1,5 @@
+import json
+
 class Student:
 
     roll_counter = 101
@@ -12,7 +14,36 @@ class Student:
     def display(self):
         print(f"Roll No: {self.roll_no}, Name: {self.name}, Marks: {self.marks}")
 
+def save_students():
+    data = []
+    for student in students:
+        data.append({
+            "roll_no" : student.roll_no,
+            "name" : student.name,
+            "marks" : student.marks
+        })
+
+    with open("students.json", "w") as file:
+        json.dump(data, file, indent=4)
+
+def load_students():
+    try:
+        with open("students.json", "r") as file:
+            data = json.load(file)
+
+            for item in data:
+                s = Student(item["name"], item["marks"])
+                s.roll_no = item["roll_no"]
+                students.append(s)
+            
+            if students:
+                Student.roll_counter = students[-1].roll_no + 1
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
 students = []
+load_students()
 
 while True:
     print("\n===== Student Management System =====")
@@ -45,6 +76,7 @@ while True:
                 print("\nInvalid marks! Enter a number.\n")
         print("---------------------------------")
         students.append(Student(name, marks))
+        save_students()
         print(f"\nStudent added successfully!\nRoll No: {students[-1].roll_no}\n")
 
     elif choice == 2:
@@ -95,6 +127,7 @@ while True:
         for student in students:
             if student.roll_no == roll_no:
                 students.remove(student)
+                save_students()
                 print(f"\nStudent with Roll No: {roll_no}, Name: {student.name}\nDeleted Successfully!")
                 found = True
                 break
